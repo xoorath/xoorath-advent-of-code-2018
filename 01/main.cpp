@@ -8,6 +8,11 @@ using namespace std;
 void Question1() {
     int x, a=0;
     fstream fs("input.txt");
+    if(!fs.is_open()) {
+        cerr << "01 Question1 - failed to open input.txt" << endl;
+        return;
+    }
+
     while(fs >> x) {
         a += x;
     }
@@ -19,19 +24,28 @@ void Question1() {
 void Question2() {
     set<int> collection;
     int x, a=0;
-    collection.insert(0);
-    while(true) {
+    int failsafe = 1024;
+    bool first = true;
+    while(failsafe--) {
         fstream fs("input.txt");
+        if(!fs.is_open()) {
+            cerr << "01 Question2 - failed to open input.txt" << endl;
+            return;
+        }
         while(fs >> x) {
             x += a;
             a = x;
-            if(collection.find(x) != collection.end()) {
+            if(!first && collection.find(x) != collection.end()) {
                 cout << "Question 2: " << x << endl;
                 return;
+            } else if(first) {
+                first = false;
+            } else {
+                collection.insert(x);
             }
-            collection.insert(x);
         }
     }
+    cerr << "01 Question2 - failsafe triggered, we didn't find an answer." << endl;
 }
 
 int main() {
