@@ -51,7 +51,7 @@ vector<Claim> ParseClaims() {
     claims.reserve(1233);
     int id, x, y, w, h;
     char discard;
-    while(getline(fs, s)) {   
+    while(getline(fs, s)) {
         stringstream ss(s);
         // #1233 @ 923,156: 16x21
         ss 
