@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "iosfwd": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "string": "cpp",
+        "utility": "cpp"
+    },
+    "files.exclude": {
+        "**/.vscode": true
     }
 }
