@@ -3,7 +3,10 @@
         "iosfwd": "cpp",
         "type_traits": "cpp",
         "string": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "iostream": "cpp"
     },
     "files.exclude": {
         "**/.vscode": true
